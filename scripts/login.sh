@@ -1,6 +1,20 @@
 #!/bin/bash
 cd "$(dirname "$0")/.." || exit
-echo "🔐 Welcome to CP Judge"
+
+echo "📘 Welcome to OfflineOJ"
+echo "1. Login"
+echo "2. Register"
+read -p "Select an option [1-2]: " choice
+
+if [[ "$choice" == "2" ]]; then
+  bash scripts/register.sh
+  exit
+elif [[ "$choice" != "1" ]]; then
+  echo "❌ Invalid option. Exiting."
+  exit 1
+fi
+
+echo "🔐 Login"
 read -p "Username: " uname
 read -s -p "Password: " pass
 echo
@@ -32,4 +46,5 @@ elif [[ "$role_found" == "problem_setter" ]]; then
 else
   bash scripts/dashboard_user.sh
 fi
+
 
