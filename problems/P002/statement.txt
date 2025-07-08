@@ -1,0 +1,11 @@
+Given n integers, determine whether the sum is odd or even.
+
+👉 If the sum is even, print EVEN.
+👉 If the sum is odd, print ODD.
+
+Input:
+- First line: integer n (1 ≤ n ≤ 100)
+- Second line: n space-separated integers
+
+Output:
+- Print EVEN or ODD
