@@ -1,2 +1,3 @@
 P001,Watermelon,Easy
 P002,Odd or Even Sum,Easy
+P004,Binary String Battle,Medium
