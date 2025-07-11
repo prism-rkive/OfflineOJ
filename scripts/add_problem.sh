@@ -3,34 +3,42 @@ cd "$(dirname "$0")/.." || exit
 
 echo "📝 Add New Problem"
 
-# Step 1: Enter Problem ID
+# Enter Problem ID
 read -p "Problem ID (e.g., P001): " pid
 if grep -q "^$pid," problems.txt; then
   echo "❌ Problem ID already exists."
   exit 1
 fi
 
-# Step 2: Enter Metadata
+# Diff
 read -p "Problem Title: " title
 read -p "Difficulty (Easy/Medium/Hard): " difficulty
 
-# Step 3: Add Problem Statement
+# Add PS
 mkdir -p "problems/$pid"
 echo "✍️ Write the full problem statement (end with Ctrl+D):"
 cat > "problems/$pid/statement.txt"
 
-# Step 4: Add Sample Input
+# Add testcases
 mkdir -p "testcases/$pid"
-echo "🧪 Enter sample input (end with Ctrl+D):"
-cat > "testcases/$pid/input.txt"
+echo "📥 Now add test cases for $pid"
 
-# Step 5: Add Expected Output
-echo "🎯 Enter expected output (end with Ctrl+D):"
-cat > "testcases/$pid/output.txt"
+tc=1
+while true; do
+  read -p "➕ Add test case #$tc? (y/n): " choice
+  [[ "$choice" != "y" ]] && break
 
-# Step 6: Save metadata
+  echo "🧪 Enter input for test case #$tc (end with Ctrl+D):"
+  cat > "testcases/$pid/input$tc.txt"
+
+  echo "🎯 Enter expected output for test case #$tc (end with Ctrl+D):"
+  cat > "testcases/$pid/output$tc.txt"
+
+  echo "✅ Test case #$tc added!"
+  ((tc++))
+done
+
+# Step 5: Save metadata
 echo "$pid,$title,$difficulty" >> problems.txt
-
-echo "✅ Problem '$title' added successfully!"
-
+echo "📚 Problem '$title' ($pid) added with $((tc - 1)) test case(s)!"
 

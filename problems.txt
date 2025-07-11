@@ -1,3 +1,4 @@
 P001,Watermelon,Easy
 P002,Odd or Even Sum,Easy
 P004,Binary String Battle,Medium
+P005,Prefix Min and Suffix Min,Medium
