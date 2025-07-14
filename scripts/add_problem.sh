@@ -14,7 +14,7 @@ fi
 read -p "Problem Title: " title
 read -p "Difficulty (Easy/Medium/Hard): " difficulty
 
-# Add PS
+# Add PSPs
 mkdir -p "problems/$pid"
 echo "✍️ Write the full problem statement (end with Ctrl+D):"
 cat > "problems/$pid/statement.txt"
@@ -38,7 +38,7 @@ while true; do
   ((tc++))
 done
 
-# Step 5: Save metadata
+# prblm data save koro
 echo "$pid,$title,$difficulty" >> problems.txt
 echo "📚 Problem '$title' ($pid) added with $((tc - 1)) test case(s)!"
 

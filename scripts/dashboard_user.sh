@@ -60,7 +60,7 @@ while true; do
     cp "$filepath" "solutions/${uname}_${pid}.cpp"
     echo "✅ Code submitted as: solutions/${uname}_${pid}.cpp"
 
-    # Instant verdict
+    # Instant verdict here
     bash scripts/judge.sh "${uname}_${pid}.cpp" "$pid"
 
   elif [[ "$opt" == "4" ]]; then
