@@ -1,49 +1,67 @@
 #!/bin/bash
-cd "$(dirname "$0")/.." || exit
+# Usage: judge.sh <solution_file> <problem_id> <username>
+solution="$1"
+pid="$2"
+uname="$3"
 
-read -p "🔎 Enter Problem ID (e.g., P002): " pid
-read -p "📄 Enter submission filename (C++ source inside solutions/, e.g., mycode.cpp): " subfile
-
-src="solutions/$subfile"
-bin="solutions/a.out"
-
-if [[ ! -f "$src" ]]; then
-  echo "❌ Submission file not found: $src"
+if [[ -z "$solution" || -z "$pid" || -z "$uname" ]]; then
+  echo "Usage: judge.sh <solution_file> <problem_id> <username>"
   exit 1
 fi
 
-# Compile
-g++ "$src" -o "$bin"
+# Default time limit in seconds (can be overridden per-problem later)
+DEFAULT_TIME_LIMIT=2
+
+# ── create isolated workspace ─────────────────────────────────────────────
+workdir=$(mktemp -d)
+trap 'rm -rf "$workdir"' EXIT
+exec_path="$workdir/a.out"
+
+# ── 1. COMPILE ────────────────────────────────────────────────────────────
+g++ "$solution" -O2 -std=c++17 -o "$exec_path" 2> "$workdir/compile_err.txt"
 if [[ $? -ne 0 ]]; then
-  echo "❌ Compilation failed."
-  exit 1
+  echo "CE (Compilation Error)"
+  cat "$workdir/compile_err.txt"
+  verdict="CE"
+else
+  # ── 2. RUN ON ALL TEST CASES ────────────────────────────────────────────
+  pass=0
+  total=0
+  for in_file in testcases/"$pid"/input*.txt; do
+    [[ -e "$in_file" ]] || continue            # skip if no input files
+    ((total++))
+    num=${in_file##*input}
+    num=${num%%.txt}
+    out_file="testcases/$pid/output${num}.txt"
+    if [[ ! -f "$out_file" ]]; then
+      echo "⚠️  Missing expected output file $out_file – skipping"
+      continue
+    fi
+
+    timeout $DEFAULT_TIME_LIMIT "$exec_path" < "$in_file" > "$workdir/user_out.txt"
+    rc=$?
+    if [[ $rc -eq 124 ]]; then
+      echo "❌ Test $num: TLE"
+    elif diff -q "$workdir/user_out.txt" "$out_file" >/dev/null; then
+      echo "✅ Test $num: Passed"
+      ((pass++))
+    else
+      echo "❌ Test $num: WA"
+    fi
+  done
+
+  if (( total == 0 )); then
+    echo "⚠️  No test cases found for problem $pid"
+    verdict="IE"      # Internal Error
+  elif (( pass == total )); then
+    verdict="AC"
+  else
+    verdict="WA"
+  fi
 fi
 
-echo "⚙️ Running test cases for $pid..."
-echo "--------------------------------"
+# ── 3. LOG VERDICT ────────────────────────────────────────────────────────
+timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+echo "$uname,$pid,$verdict,$timestamp" >> submission.txt
 
-tc_path="testcases/$pid"
-count=1
-pass=0
-
-while [[ -f "$tc_path/input$count.txt" && -f "$tc_path/output$count.txt" ]]; do
-  ./solutions/a.out < "$tc_path/input$count.txt" > "solutions/user_output.txt"
-
-  if diff -q "solutions/user_output.txt" "$tc_path/output$count.txt" >/dev/null; then
-    echo "✅ Test case $count: Passed"
-    ((pass++))
-  else
-    echo "❌ Test case $count: Failed"
-    echo "🔎 Expected:"
-    cat "$tc_path/output$count.txt"
-    echo "📤 Got:"
-    cat "solutions/user_output.txt"
-  fi
-  echo "--------------------------------"
-  ((count++))
-done
-
-total=$((count - 1))
-echo "🎉 Result: $pass / $total test cases passed"
-rm -f solutions/user_output.txt solutions/a.out
-
+echo "Final verdict: $verdict ($pass / $total)"
