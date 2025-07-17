@@ -1,6 +1,15 @@
-P001,Watermelon,Easy
-P002,Odd or Even Sum,Easy
-P004,Binary String Battle,Medium
-P005,Prefix Min and Suffix Min,Medium
-
-P010,Sum,Easy
+P001, Watermelon, Easy
+P002, Odd or Even Sum, Easy
+P003, Honest Coach, Easy
+P004, Binary String Battle, Medium
+P005, Prefix Min and Suffix Min, Medium
+P006, Clock Conversion, Easy
+P007, Triple, Easy
+P008, Sale, Medium
+P009, HQ9+, Easy
+P010, Sum, Easy
+P011, Decoding, Medium
+P012, Expression, Medium
+P013, Lucky Division, Medium
+P014, Theater Square, Medium
+P015, Bogosort, Medium

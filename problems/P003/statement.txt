@@ -1,0 +1,11 @@
+There are n athletes, each with a certain strength. Your task is to divide the athletes into two teams. Each team must have at least one athlete, and each athlete must be in one team.
+You want to make sure that the strongest athlete in the first team and the weakest athlete in the second team are as close in strength as possible. Specifically, you want to minimize the difference between the maximum strength of the first team and the minimum strength of the second team.
+
+Input:
+-> The first line contains an integer t (1 <= t <= 1000)-the number of test cases.
+-> Then for each test case:
+	~ The first line contains an integer n (2 <= n <= 50)-the number of athletes.
+ 	~ The second line contains n integers, each representing the strength of an athlete. The strength of an athlete i is si (1 <= si <= 1000).
+
+Output:
+For each test case, print the smallest difference between the strongest athlete in the first team and the weakest athlete in the second team.
