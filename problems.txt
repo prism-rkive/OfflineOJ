@@ -7,9 +7,24 @@ P006, Clock Conversion, Easy
 P007, Triple, Easy
 P008, Sale, Medium
 P009, HQ9+, Easy
-P010, Sum, Easy
+P010, Arena, Easy
 P011, Decoding, Medium
 P012, Expression, Medium
 P013, Lucky Division, Medium
 P014, Theater Square, Medium
 P015, Bogosort, Medium
+P016, Those Who Are With Us, Hard
+P017, Down with Brackets, Medium
+P018, Brr Brr Patapim, Medium
+P019, osu!mania, Easy
+P020, Unique Bid Auction, Easy
+P021, Unit Array, Easy
+P022, Advantage, Easy
+P023, Cat Cycle, Hard
+P024, Quests, Hard
+P025, Erase First or Second Letter, Hard
+P026, Delete Two Elements, Hard
+P027, Dreamoon and WiFi, Hard
+P028, Raising Bacteria, Medium
+P029, Treasure Hunt, Easy
+P030, Trippi Troppi, Easy

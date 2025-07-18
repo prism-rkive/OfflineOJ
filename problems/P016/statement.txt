@@ -1,0 +1,19 @@
+You are given a matrix of integers with n rows and m columns. The cell at the intersection of the i-th row and the j-th column contains the number aij.
+
+You can perform the following operation exactly once:
+
+Choose two numbers 1 ≤ r ≤ n and 1 ≤ c ≤ m.
+For all cells (i,j) in the matrix such that i=r or j=c, decrease aij by one.
+You need to find the minimal possible maximum value in the matrix a after performing exactly one such operation.
+
+Input:
+Each test consists of multiple test cases. The first line contains a single integer t (1 ≤ t ≤ 10^4) — the number of test cases. The description of the test cases follows.
+
+The first line of each test case contains two integers n and m (1 ≤ nxm ≤ 10^5) — the number of rows and columns in the matrix.
+
+The next n lines of each test case describe the matrix a. The i-th line contains m integers ai1,ai2,…,aim (1 ≤ aij ≤ 100) — the elements in the i-th row of the matrix.
+
+It is guaranteed that the sum of nxm across all test cases does not exceed 2x10^5.
+
+Output:
+For each test case, output the minimum maximum value in the matrix a after performing exactly one operation.
