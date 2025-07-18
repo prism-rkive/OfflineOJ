@@ -29,20 +29,3 @@ P027, Dreamoon and WiFi, Hard
 P028, Raising Bacteria, Medium
 P029, Treasure Hunt, Easy
 P030, Trippi Troppi, Easy
-=======
-P001, Watermelon, Easy, Used
-P002, Odd or Even Sum, Easy, Used
-P003, Honest Coach, Easy, Used
-P004, Binary String Battle, Medium, Used
-P005, Prefix Min and Suffix Min, Medium, Available
-P006, Clock Conversion, Easy, Available
-P007, Triple, Easy, Used
-P008, Sale, Medium, Used
-P009, HQ9+, Easy, Used
-P010, Sum, Easy, Used
-P011, Decoding, Medium, Available
-P012, Expression, Medium, Available
-P013, Lucky Division, Medium, Available
-P014, Theater Square, Medium, Available
-P015, Bogosort, Medium, Available
->>>>>>> origin/main
