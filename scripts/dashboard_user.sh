@@ -18,7 +18,7 @@ while true; do
   if [[ "$opt" == "1" ]]; then
     echo "📚 Available Problems:"
     echo "------------------------------"
-    column -s, -t problems.txt
+    awk -F',' 'tolower($4) ~ /used/ { print $1","$2","$3 }' problems.txt | column -s, -t
     echo "------------------------------"
     
     echo "🎯 Active Contests:"
