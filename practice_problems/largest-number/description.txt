@@ -1,0 +1,22 @@
+Problem Title: Largest Number
+
+Description:
+You are given a list of integers. Your task is to write a program that reads these integers and prints the largest number among them.
+
+Input:
+- The first line contains a single integer n (1 ≤ n ≤ 1000), the number of elements.
+- The second line contains n integers separated by space.
+
+Output:
+- Output a single integer: the largest number in the list.
+
+Example:
+Input:
+6
+10 25 32 18 7 29
+
+Output:
+32
+
+Constraints:
+- 1 ≤ Each number ≤ 10^6

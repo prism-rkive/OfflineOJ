@@ -1,0 +1,23 @@
+Problem Title: Array Sort
+
+Description:
+Sort an array of integers in ascending order.
+
+Input:
+- The first line contains an integer n, the number of elements.
+- The second line contains n integers separated by space.
+
+Output:
+- The sorted array elements in ascending order separated by space.
+
+Example:
+Input:
+5
+3 1 4 5 2
+
+Output:
+1 2 3 4 5
+
+Constraints:
+- 1 ≤ n ≤ 10^5
+- Each element fits in 32-bit signed integer

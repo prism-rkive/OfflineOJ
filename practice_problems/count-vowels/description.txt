@@ -1,0 +1,20 @@
+Problem Title: Count Vowels
+
+Description:
+Count the number of vowels in the given string. Vowels are 'a', 'e', 'i', 'o', 'u' (lowercase only).
+
+Input:
+- A single string s.
+
+Output:
+- The number of vowels in the string.
+
+Example:
+Input:
+hello world
+
+Output:
+3
+
+Constraints:
+- 1 ≤ length of s ≤ 1000

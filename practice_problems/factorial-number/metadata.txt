@@ -1,0 +1,3 @@
+Title: Factorial Number
+Difficulty: Easy
+Tags: math, recursion, loops

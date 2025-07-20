@@ -1,0 +1,3 @@
+Title: Largest Number
+Difficulty: Easy
+Tags: comparison, loops, arrays

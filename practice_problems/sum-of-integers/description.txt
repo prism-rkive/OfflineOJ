@@ -1,0 +1,24 @@
+# Problem: Sum of Integers
+
+## Description:
+Given two integers `A` and `B` where A ≤ B, your task is to calculate the sum of all integers from A to B inclusive.
+
+## Input Format:
+A single line containing two space-separated integers A and B.
+
+## Output Format:
+A single integer — the sum from A to B.
+
+## Constraints:
+1 ≤ A ≤ B ≤ 10^5
+
+## Example:
+
+Input:
+3 7
+
+Output:
+25
+
+## Explanation:
+3 + 4 + 5 + 6 + 7 = 25

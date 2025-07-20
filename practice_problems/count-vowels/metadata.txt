@@ -1,0 +1,3 @@
+Title: Count Vowels
+Difficulty: Easy
+Tags: strings, basics

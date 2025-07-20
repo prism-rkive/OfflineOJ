@@ -1,0 +1,31 @@
+Problem Title: Matrix Multiplication
+
+Description:
+Multiply two matrices A and B. Matrix A is of size n×m and matrix B is of size m×p. Output the resulting n×p matrix.
+
+Input:
+- First line contains two integers n and m.
+- Next n lines each contain m integers representing matrix A.
+- Next line contains two integers m and p.
+- Next m lines each contain p integers representing matrix B.
+
+Output:
+- The resulting matrix of size n×p, each row in a new line with elements separated by spaces.
+
+Example:
+Input:
+2 3
+1 2 3
+4 5 6
+3 2
+7 8
+9 10
+11 12
+
+Output:
+58 64
+139 154
+
+Constraints:
+- 1 ≤ n, m, p ≤ 100
+- Elements of matrices are integers between -10^9 and 10^9
