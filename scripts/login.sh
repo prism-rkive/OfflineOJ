@@ -44,7 +44,7 @@ if [[ "$role_found" == "admin" ]]; then
 elif [[ "$role_found" == "problem_setter" ]]; then
   bash scripts/dashboard_setter.sh
 else
-  bash dashboard_user.sh $uname
+  bash scripts/dashboard_user.sh $uname
 fi
 
 
