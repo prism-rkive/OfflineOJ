@@ -1,31 +1,31 @@
-<<<<<<< HEAD
-P001, Watermelon, Easy
-P002, Odd or Even Sum, Easy
-P003, Honest Coach, Easy
-P004, Binary String Battle, Medium
-P005, Prefix Min and Suffix Min, Medium
-P006, Clock Conversion, Easy
-P007, Triple, Easy
-P008, Sale, Medium
-P009, HQ9+, Easy
-P010, Arena, Easy
-P011, Decoding, Medium
-P012, Expression, Medium
-P013, Lucky Division, Medium
-P014, Theater Square, Medium
-P015, Bogosort, Medium
-P016, Those Who Are With Us, Hard
-P017, Down with Brackets, Medium
-P018, Brr Brr Patapim, Medium
-P019, osu!mania, Easy
-P020, Unique Bid Auction, Easy
-P021, Unit Array, Easy
-P022, Advantage, Easy
-P023, Cat Cycle, Hard
-P024, Quests, Hard
-P025, Erase First or Second Letter, Hard
-P026, Delete Two Elements, Hard
-P027, Dreamoon and WiFi, Hard
-P028, Raising Bacteria, Medium
-P029, Treasure Hunt, Easy
-P030, Trippi Troppi, Easy
+P001,Watermelon,Easy,Unlocked
+P002,Odd or Even Sum,Easy,Available
+P003,Honest Coach,Easy,Unlocked
+P004,Binary String Battle,Medium,Available
+P005,Prefix Min and Suffix Min,Medium,Unlocked
+P006,Clock Conversion,Easy,Available
+P007,Triple,Easy,Available
+P008,Sale,Medium,Unlocked
+P009,HQ9+,Easy,Available
+P010,Arena,Easy,Available
+P011,Decoding,Medium,Unlocked
+P012,Expression,Medium,Available
+P013,Lucky Division,Medium,Available
+P014,Theater Square,Medium,Unlocked
+P015,Bogosort,Medium,Unlocked
+P016,Those Who Are With Us,Hard,Available
+P017,Down with Brackets,Medium,Unlocked
+P018,Brr Brr Patapim,Medium,Available
+P019,osu!mania,Easy,Unlocked
+P020,Unique Bid Auction,Easy,Available
+P021,Unit Array,Easy,Unlocked
+P022,Advantage,Easy,Available
+P023,Cat Cycle,Hard,Available
+P024,Quests,Hard,Unlocked
+P025,Erase First or Second Letter,Hard,Available
+P026,Delete Two Elements,Hard,Available
+P027,Dreamoon and WiFi,Hard,Unlocked
+P028,Raising Bacteria,Medium,Available
+P029,Treasure Hunt,Easy,Available
+P030,Trippi Troppi,Easy,Unlocked
+
