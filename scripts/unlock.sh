@@ -3,8 +3,8 @@
 now=$(date +%s)
 tmp_file=$(mktemp)
 
-problems_file="../problems.txt"
-contests_file="../contests.txt"
+problems_file="problems.txt"
+contests_file="contests.txt"
 
 declare -A unlock_list
 
