@@ -11,7 +11,7 @@ while true; do
     bash scripts/add_problem.sh
   elif [[ "$opt" == "2" ]]; then
     echo "📄 Problems:"
-    cat ~/cp_judge/problems.txt
+    cat problems.txt
   elif [[ "$opt" == "3" ]]; then
     echo "👋 Logging out..."
     exit
