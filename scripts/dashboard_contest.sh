@@ -4,9 +4,9 @@ cname=$1 #add this to user dashboard and also from login dashboard
 uname=$2
 
 # Path config
-CONTEST_FILE="../contests.txt"
-PROBLEMS_FILE="../problems.txt"
-SCORECARD_FILE="../contests/scorecard_${cname}.txt"
+CONTEST_FILE="contests.txt"
+PROBLEMS_FILE="problems.txt"
+SCORECARD_FILE="contests/scorecard_${cname}.txt"
 
 # Get problem list from contests.txt
 problem_line=$(grep "^$cname|" "$CONTEST_FILE")
@@ -37,19 +37,19 @@ while true; do
       ;;
     2)
         read -p "Enter Problem ID (e.g., P001): " pid
-        if [[ ! -f "../problems/$pid/statement.txt" ]]; then
+        if [[ ! -f "problems/$pid/statement.txt" ]]; then
          echo "❌ Problem not found."
          continue
         fi
 
          echo "📖 Problem Statement:"
          echo "------------------------------"
-         cat "../problems/$pid/statement.txt"
+         cat "problems/$pid/statement.txt"
          echo "------------------------------"
         ;;
 
     3)    
-      bash practice_submission.sh "$uname" "$cname"
+      bash scripts/practice_submission.sh "$uname" "$cname"
       ;;
     4)
       if [[ -f "$SCORECARD_FILE" ]]; then
