@@ -7,8 +7,8 @@ verdict=$3  # "Accepted" or "Rejected"
 timestamp=$4
 pid=$5
 
-scorecard_file="../contests/scorecard_${cname}.txt"
-contest_file="../contests.txt"
+scorecard_file="contests/scorecard_${cname}.txt"
+contest_file="contests.txt"
 submission_file="submission.txt"
 
 echo "[DEBUG] uname=$uname, verdict=$verdict, timestamp=$timestamp, pid=$pid, cname=$cname"
