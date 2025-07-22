@@ -11,7 +11,7 @@ while true; do
 
   case "$opt" in
     1)
-      bash create_contest.sh 
+      bash scripts/add_contest.sh 
       ;;
     2)
 
