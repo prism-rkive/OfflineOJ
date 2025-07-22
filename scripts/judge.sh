@@ -3,6 +3,7 @@
 solution="$1"
 pid="$2"
 uname="$3"
+cname="$4"
 
 if [[ -z "$solution" || -z "$pid" || -z "$uname" ]]; then
   echo "Usage: judge.sh <solution_file> <problem_id> <username>"
@@ -65,3 +66,5 @@ timestamp=$(date +"%Y-%m-%d %H:%M:%S")
 echo "$uname,$pid,$verdict,$timestamp" >> submission.txt
 
 echo "Final verdict: $verdict ($pass / $total)"
+bash scoreboard.sh "$cname" "$uname" "$verdict" "$timestamp" "$pid" 
+
