@@ -66,5 +66,5 @@ timestamp=$(date +"%Y-%m-%d %H:%M:%S")
 echo "$uname,$pid,$verdict,$timestamp" >> submission.txt
 
 echo "Final verdict: $verdict ($pass / $total)"
-bash scoreboard.sh "$cname" "$uname" "$verdict" "$timestamp" "$pid" 
+bash scripts/scoreboard.sh "$cname" "$uname" "$verdict" "$timestamp" "$pid" 
 
