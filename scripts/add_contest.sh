@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTESTS_LIST="../contests.txt"
+CONTESTS_LIST="contests.txt"
 
 echo "=== Add Contest ==="
 read -p "Contest name: " cname
@@ -17,9 +17,9 @@ if [[ -z "$cname" || -z "$probs" || -z "$start" || -z "$end" ]]; then
   exit 1
 fi
 
-echo "$cname|$start_ts|$end_ts|$probs" >>../contests.txt
+echo "$cname|$start_ts|$end_ts|$probs" >>contests.txt
 #creating a scorecard for contest
-touch ../contests/scorecard_${cname}.txt
+touch contests/scorecard_${cname}.txt
 
 
 
