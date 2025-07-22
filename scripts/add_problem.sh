@@ -4,7 +4,7 @@ cd "$(dirname "$0")/.." || exit
 echo "📝 Add New Problem"
 
 #Auto problem id generation
-last_id=$(awk -F',' '{gsub(/^[ \t]+|[ \t]+$/, "", $1); print $1}' ../problems.txt \
+last_id=$(awk -F',' '{gsub(/^[ \t]+|[ \t]+$/, "", $1); print $1}' problems.txt \
   | grep -E "^P[0-9]+" | sed 's/^P//' | sort -n | tail -n 1)
 
 # If none exist, start from 1
