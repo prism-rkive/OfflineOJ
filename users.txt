@@ -11,3 +11,4 @@ newsetter,5f4dcc3b5aa765d61d8327deb882cf99,problem_setter
 sam,332532dcfaa1cbf61e2a266bd723612c,contestant
 admin,202cb962ac59075b964b07152d234b70,contestant
 demo,fe01ce2a7fbac8fafaed7c982a04e229,contestant
+Curo,2e315dcaa77983999bf11106c65229dc,contestant
