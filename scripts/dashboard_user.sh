@@ -18,28 +18,28 @@ while true; do
   if [[ "$opt" == "3" ]]; then
     echo "📚 Problems:"
     echo "------------------------------"
-    bash unlock.sh #checking currently unlocked problems
+    bash scripts/unlock.sh #checking currently unlocked problems
     awk -F',' '{
       gsub(/^ +| +$/, "", $4);  # Trim leading/trailing spaces
       if (tolower($4) == "unlocked") {
         print $1 "," $2 "," $3
       }
-    }' ../problems.txt | column -s, -t
+    }' problems.txt | column -s, -t
     echo "------------------------------"
     
   elif [[ "$opt" == "4" ]]; then
     read -p "Enter Problem ID (e.g., P001): " pid
     echo "📖 Problem Statement:"
     echo "------------------------------"
-    cat "../problems/$pid/statement.txt"
+    cat "problems/$pid/statement.txt"
     echo "------------------------------"
 
     if [[ -f "testcases/$pid/input1.txt" && -f "testcases/$pid/output1.txt" ]]; then
       echo "🔍 Sample Input:"
-      cat "../testcases/$pid/input1.txt"
+      cat "testcases/$pid/input1.txt"
       echo
       echo "✅ Sample Output:"
-      cat "../testcases/$pid/output1.txt"
+      cat "testcases/$pid/output1.txt"
       echo
     else
       echo "ℹ️ No sample test case available."
@@ -47,7 +47,7 @@ while true; do
     echo "------------------------------"
 
   elif [[ "$opt" == "5" ]]; then
-    bash practice_submission.sh "$uname"  #fix location
+    bash scripts/practice_submission.sh "$uname"  #fix location
 
   elif [[ "$opt" == "6" ]]; then
     echo "📄 Your Submissions:"
@@ -78,7 +78,7 @@ while true; do
         printf "%-10s | %-25s | %-25s | %-20s\n" \
           "$cname" "$(date -d @$start)" "$(date -d @$end)" "$problems"
       fi
-    done <../contests.txt
+    done <contests.txt
 
     echo -e "\n⏳ Upcoming Contests"
     echo "--------------------------------------------------------------------------------"
@@ -89,7 +89,7 @@ while true; do
         printf "%-10s | %-25s | %-25s | %-20s\n" \
           "$cname" "$(date -d @$start)" "$(date -d @$end)" "$problems"
       fi
-    done < ../contests.txt
+    done < contests.txt
 
     echo -e "\n✅ Previous Contests"
     echo "--------------------------------------------------------------------------------"
@@ -100,11 +100,11 @@ while true; do
         printf "%-10s | %-25s | %-25s | %-20s\n" \
           "$cname" "$(date -d @$start)" "$(date -d @$end)" "$problems"
       fi
-    done < ../contests.txt
+    done < contests.txt
 
   elif [[ "$opt" == "2" ]]; then  
     read -p "Enter Contest ID : " cname
-    bash dashboard_contest.sh "$cname" "$uname"
+    bash scripts/dashboard_contest.sh "$cname" "$uname"
 
 
   elif [[ "$opt" == "7" ]]; then
