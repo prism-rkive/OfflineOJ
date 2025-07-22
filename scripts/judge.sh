@@ -63,7 +63,6 @@ fi
 
 # ── 3. LOG VERDICT ────────────────────────────────────────────────────────
 timestamp=$(date +"%Y-%m-%d %H:%M:%S")
-echo "$uname,$pid,$verdict,$timestamp" >> submission.txt
 
 echo "Final verdict: $verdict ($pass / $total)"
 bash scripts/scoreboard.sh "$cname" "$uname" "$verdict" "$timestamp" "$pid" 
