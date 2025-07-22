@@ -53,8 +53,11 @@ while true; do
       ;;
     4)
       if [[ -f "$SCORECARD_FILE" ]]; then
-        echo "--- Scorecard for $cname ---"
-        column -t -s',' "$SCORECARD_FILE"
+        echo "--- Scorecard ---"
+        {
+            echo "Username,Points,Solved,Last_Submission"
+            cat "$SCORECARD_FILE"
+          } | column -t -s',' 
       else
         echo "⚠️  Scorecard not found for this contest."
       fi
