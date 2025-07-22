@@ -11,12 +11,6 @@ scorecard_file="contests/scorecard_${cname}.txt"
 contest_file="contests.txt"
 submission_file="submission.txt"
 
-echo "[DEBUG] uname=$uname, verdict=$verdict, timestamp=$timestamp, pid=$pid, cname=$cname"
-echo "[DEBUG] scorecard_file=$scorecard_file"
-
-
-
-
 #DONT UPDATE SCOREBOARD
 contest_line=$(grep "^$cname|" "$contest_file")
 problem_list=$(echo "$contest_line" | cut -d'|' -f4)
