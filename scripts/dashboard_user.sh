@@ -52,16 +52,18 @@ while true; do
   elif [[ "$opt" == "6" ]]; then
     echo "📄 Your Submissions:"
     echo "------------------------------"
-    if [[ ! -d "submissions" ]]; then
+
+    if [[ ! -f "submission.txt" ]]; then
       echo "ℹ️ No submissions found."
     else
-      for f in submissions/*/${uname}_*; do
-        if [[ -f "$f" ]]; then
-          echo "$(basename "$f")"
-        fi
+      # Print a header row
+      printf "%-15s %-10s %-10s %-20s\n" "Username" "ProblemID" "Verdict" "Timestamp"
+      echo "---------------------------------------------------------------"
+
+      # Print matching rows
+      grep "^$uname," submission.txt | while IFS=',' read -r user pid verdict time; do
+        printf "%-15s %-10s %-10s %-20s\n" "$user" "$pid" "$verdict" "$time"
       done
-    fi
-    echo "------------------------------"
 
   elif [[ "$opt" == "1" ]]; then   #fix this
     echo "📅 Contest Overview"
