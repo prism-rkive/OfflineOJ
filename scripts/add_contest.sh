@@ -24,8 +24,8 @@ touch contests/scorecard_${cname}.txt
 
 
 # === Lock selected problems immediately ===
-CONTESTS_LIST="../contests.txt"
-PROBLEMS_FILE="../problems.txt"
+CONTESTS_LIST="contests.txt"
+PROBLEMS_FILE="problems.txt"
 TMP_FILE=$(mktemp)
 IFS=',' read -ra prob_ids <<< "$probs"
 
